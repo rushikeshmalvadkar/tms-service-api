@@ -21,6 +21,13 @@ public class Application {
     private static final Map<String, VisitInfo> IP_ADDRESS_TO_VISIT_INFO_MAP =
             new ConcurrentHashMap<>();
 
+    /*
+    private static final Map<String, Map<String, VisitInfo>> IP_ADDRESS_TO_VISIT_INFO_MAP =
+            new ConcurrentHashMap<>();
+            /test -> 123 -> visit info
+    private List<String> rateLimitedPath = List.of("/test);
+    */
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

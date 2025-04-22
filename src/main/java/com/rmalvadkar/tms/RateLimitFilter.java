@@ -24,6 +24,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         log.info("inside rate limit filter");
+        log.info("path : {}", request.getServletPath());
         String ipAddress = request.getRemoteAddr();
         if (IP_ADDRESS_TO_VISIT_INFO_MAP.containsKey(ipAddress)) {
             VisitInfo visitInfo = IP_ADDRESS_TO_VISIT_INFO_MAP.get(ipAddress);
